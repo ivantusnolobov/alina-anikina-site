@@ -1,11 +1,14 @@
 import Head from 'next/head';
 import Link from 'next/link';
+import Bio from '@app/components/bio';
+import Image from 'next/image';
+import heroImage from '@public/img/hero-image.png';
 
 export default function HomePage() {
   return (
-    <main className="container">
+    <main className="container py">
       <header>
-        <nav className="flex justify-between gap-4 py-6">
+        <nav className="flex justify-between gap-4 pt-12">
           <Link href="/projects">
             <a className="text-violet-600 hover:underline">Projects</a>
           </Link>
@@ -14,15 +17,19 @@ export default function HomePage() {
           </Link>
         </nav>
       </header>
-      <div className="max-w-xl mt-40">
-        <h1 className="mb-8 text-4xl font-bold">Hi!</h1>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti quisquam reprehenderit
-          harum, vel dolores, nam ex corporis, qui atque expedita quos. Voluptatem, reprehenderit?
-          Fugit possimus dolor tempora, quisquam officiis distinctio quia esse, nesciunt asperiores
-          eligendi sint repellendus corrupti aut nihil voluptate, temporibus similique suscipit
-          provident obcaecati voluptates? Nam, culpa officiis?
-        </p>
+      <div className="py-9">
+        <figure className="mb-10 -ml-6">
+          <Image
+            src={heroImage}
+            width={596}
+            height={722}
+            alt="Drawing of Alina sitting on a chair with iPad"
+            className="block"
+          />
+        </figure>
+        <div>
+          <Bio />
+        </div>
       </div>
     </main>
   );
