@@ -5,6 +5,14 @@ export default function Bio() {
   const [version, setVersion] = React.useState<'short' | 'medium' | 'long'>('short');
   const divRef = React.useRef<HTMLDivElement>(null);
 
+  React.useEffect(() => {
+    const divEl = divRef.current;
+    if (divEl && (version === 'medium' || version === 'long')) {
+      const offsetBottom = divEl.offsetTop + divEl.offsetHeight;
+      window.scrollTo({ top: offsetBottom });
+    }
+  }, [version]);
+
   return (
     <div ref={divRef}>
       {version === 'long' ? (
@@ -66,7 +74,7 @@ export default function Bio() {
             className="block mt-4 text-violet-600 hover:underline"
             onClick={() => {
               setVersion('long');
-              divRef.current?.scrollIntoView();
+              // scrollToBottom();
             }}
           >
             longest version
@@ -81,7 +89,7 @@ export default function Bio() {
             className="block mt-4 text-violet-600 hover:underline"
             onClick={() => {
               setVersion('medium');
-              divRef.current?.scrollIntoView();
+              // scrollToBottom();
             }}
           >
             longer version
