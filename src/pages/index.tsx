@@ -11,7 +11,7 @@ const Home: NextPage = () => {
       </Head>
 
       <main>
-        <h1>Alina Anikina — popo pipi</h1>
+        <h1 className="text-3xl font-bold underline">HI</h1>
       </main>
     </>
   );
