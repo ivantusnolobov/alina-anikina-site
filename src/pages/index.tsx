@@ -1,36 +1,27 @@
-import Head from 'next/head';
-import Link from 'next/link';
 import Bio from '@app/components/bio';
+import Layout from '@app/components/layout';
 import Image from 'next/image';
 import heroImage from '@public/img/hero-image.png';
 
 export default function HomePage() {
   return (
-    <main className="container py">
-      <header>
-        <nav className="flex justify-between gap-4 pt-12">
-          <Link href="/projects">
-            <a className="text-violet-600 hover:underline">Projects</a>
-          </Link>
-          <Link href="/">
-            <a className="text-violet-600 hover:underline">Contacts</a>
-          </Link>
-        </nav>
-      </header>
-      <div className="py-9">
-        <figure className="mb-10 -ml-6">
-          <Image
-            src={heroImage}
-            width={596}
-            height={722}
-            alt="Drawing of Alina sitting on a chair with iPad"
-            className="block"
-          />
-        </figure>
-        <div>
-          <Bio />
+    <Layout>
+      <main className="container my-auto">
+        <div className="flex flex-col items-center gap-10 md:flex-row">
+          <figure className="max-w-md -ml-6 md:order-last md:flex-1 md:max-w-none lg:-ml-0 lg:-mt-12">
+            <Image
+              src={heroImage}
+              width={596}
+              height={722}
+              alt="Drawing of Alina sitting on a chair with iPad"
+              className="block"
+            />
+          </figure>
+          <div className="md:flex-1">
+            <Bio className="max-w-md" />
+          </div>
         </div>
-      </div>
-    </main>
+      </main>
+    </Layout>
   );
 }

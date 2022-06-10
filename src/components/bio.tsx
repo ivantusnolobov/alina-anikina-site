@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Image from 'next/image';
 
-export default function Bio() {
+export default function Bio({ className }: Props) {
   const [version, setVersion] = React.useState<'short' | 'medium' | 'long'>('short');
   const divRef = React.useRef<HTMLDivElement>(null);
 
@@ -14,17 +14,17 @@ export default function Bio() {
   }, [version]);
 
   return (
-    <div ref={divRef}>
+    <div ref={divRef} className={className}>
       {version === 'long' ? (
         <div>
-          <h1 className="mb-4 text-3xl font-bold">Hi!</h1>
+          <h1 className="mb-4">Hi!</h1>
           <p className="mb-6">
             I’m Alina, a freelance graphic designer living in Bishkek. I create corporate identity,
             posters, design for social networks, landing pages, merchandising, illustrations and
             everything in-between.
           </p>
-          <h2 className="mb-4 text-2xl font-bold">Software</h2>
-          <p className="mb-4">
+          <h2 className="mb-4">Software</h2>
+          <p className="mb-6">
             To create I use programs such as: Figma, Illustrator, Photoshop, Procreate.
           </p>
           <figure>
@@ -63,7 +63,7 @@ export default function Bio() {
         </div>
       ) : version === 'medium' ? (
         <div>
-          <h1 className="mb-4 text-3xl font-bold">Hi!</h1>
+          <h1 className="mb-4">Hi!</h1>
           <p>
             I’m Alina, a freelance graphic designer living in Bishkek. I create corporate identity,
             posters, design for social networks, landing pages, merchandising, illustrations and
@@ -74,7 +74,6 @@ export default function Bio() {
             className="block mt-4 text-violet-600 hover:underline"
             onClick={() => {
               setVersion('long');
-              // scrollToBottom();
             }}
           >
             longest version
@@ -82,14 +81,13 @@ export default function Bio() {
         </div>
       ) : (
         <div>
-          <h1 className="mb-4 text-3xl font-bold">Hi!</h1>
+          <h1 className="mb-4">Hi!</h1>
           <p>I’m Alina, a freelance graphic designer</p>
           <button
             type="button"
             className="block mt-4 text-violet-600 hover:underline"
             onClick={() => {
               setVersion('medium');
-              // scrollToBottom();
             }}
           >
             longer version
@@ -99,3 +97,7 @@ export default function Bio() {
     </div>
   );
 }
+
+type Props = {
+  className?: string;
+};
