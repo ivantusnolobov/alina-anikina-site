@@ -1,3 +1,5 @@
+const defaultTheme = require('tailwindcss/defaultTheme');
+
 module.exports = {
   content: ['./src/**/*.{js,ts,jsx,tsx}'],
   theme: {
@@ -5,7 +7,11 @@ module.exports = {
       center: true,
       padding: '2rem',
     },
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: ['Jost', ...defaultTheme.fontFamily.sans],
+      },
+    },
   },
   plugins: [require('@tailwindcss/typography')],
 };
