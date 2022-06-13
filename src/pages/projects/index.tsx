@@ -15,7 +15,7 @@ export default function ProjectsPage({ projects }: InferGetStaticPropsType<typeo
           {projects.map(({ id, meta }) => (
             <li key={id} className="flex flex-col overflow-hidden rounded-lg shadow">
               <figure className="flex-shrink-0 leading-0">
-                <Image src={meta.coverImage} placeholder="blur" width={579} height={434} alt="" />
+                <Image src={meta.coverImage} width={579} height={434} alt="" />
               </figure>
               <div className="flex-1 p-6 bg-white">
                 <Link href={`/projects/${meta.slug}`}>
