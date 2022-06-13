@@ -21,16 +21,18 @@ function validateFrontmatter(id: number, frontmatter: { [key: string]: any }) {
   type Frontmatter = {
     slug: string | undefined;
     title: string | undefined;
+    description: string | undefined;
     date: Date | undefined;
     coverImage: string | undefined;
-    categories: string[] | undefined;
+    category: string | undefined;
   };
-  const { slug, title, date, coverImage, categories } = frontmatter as Frontmatter;
+
+  const { slug, title, date, coverImage, category, description } = frontmatter as Frontmatter;
   invariant(
-    slug && title && date && coverImage && categories,
-    `Issue ${id} (frontmatter): slug, title, date, coverImage, categories`,
+    slug && title && description && date && coverImage && category,
+    `Issue ${id} (frontmatter): slug, title, description, date, coverImage, category`,
   );
-  return { slug, title, date: String(date), coverImage, categories };
+  return { slug, title, description, date: String(date), coverImage, category };
 }
 
 export async function getAllProjects() {

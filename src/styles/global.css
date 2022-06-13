@@ -32,22 +32,10 @@
   }
 
   body {
-    @apply text-lg lg:text-xl leading-relaxed lg:leading-relaxed;
+    @apply text-gray-800 antialiased font-sans;
   }
 
   h1 {
-    @apply text-3xl lg:text-4xl font-semibold leading-snug lg:leading-snug;
-  }
-
-  h2 {
-    @apply text-2xl lg:text-3xl font-semibold leading-normal lg:leading-snug;
-  }
-
-  h3 {
-    @apply text-lg lg:text-xl font-semibold leading-normal lg:leading-relaxed;
-  }
-
-  a {
-    @apply text-violet-600 hover:underline;
+    @apply text-3xl tracking-tight font-semibold text-gray-800 sm:text-4xl;
   }
 }

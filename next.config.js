@@ -11,6 +11,9 @@ const nextConfig = {
   swcMinify: true,
   experimental: {
     outputStandalone: true,
+    images: {
+      layoutRaw: true,
+    },
   },
 };
 
