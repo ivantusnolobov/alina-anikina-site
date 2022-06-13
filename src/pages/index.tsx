@@ -5,7 +5,7 @@ import heroImage from '@public/img/hero-image.png';
 
 export default function HomePage() {
   return (
-    <Layout>
+    <Layout title="Alina Anikina">
       <main className="container my-auto">
         <div className="flex flex-col items-center gap-10 md:flex-row">
           <figure className="max-w-md -ml-6 md:order-last md:flex-1 md:max-w-none lg:-ml-0 lg:-mt-12">

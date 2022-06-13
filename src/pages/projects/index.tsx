@@ -8,7 +8,7 @@ import Image from 'next/image';
 
 export default function ProjectsPage({ projects }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
-    <Layout>
+    <Layout title="Projects by Anikina Alina">
       <main className="container pb-16 pt-14 lg:pt-20 lg:pb-24">
         <h1 className="max-w-lg mx-auto lg:max-w-none">Projects</h1>
         <ul className="grid max-w-lg gap-6 mx-auto mt-8 lg:grid-cols-3 lg:max-w-none lg:mt-12">

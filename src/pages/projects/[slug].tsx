@@ -7,10 +7,10 @@ import Layout from '@app/components/layout';
 
 export default function ProjectPage({ project }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
-    <Layout>
+    <Layout title={`${project.meta.title} by Anikina Alina`}>
       <main className="container">
         <div className="prose prose-lg">
-          <h1>{project?.meta.title}</h1>
+          <h1>{project.meta.title}</h1>
           {htmr(project.body)}
         </div>
       </main>
