@@ -12,7 +12,7 @@ function getGhIssues() {
   return http.request('GET /repos/{owner}/{repo}/issues', {
     owner: 'ivantusnolobov',
     repo: 'alina-anikina-site',
-    creator: 'ivantusnolobov',
+    creator: 'alinaanikina',
     labels: 'published',
   });
 }
@@ -28,10 +28,13 @@ function validateFrontmatter(id: number, frontmatter: { [key: string]: any }) {
   };
 
   const { slug, title, date, coverImage, category, description } = frontmatter as Frontmatter;
-  invariant(
-    slug && title && description && date && coverImage && category,
-    `Issue ${id} (frontmatter): slug, title, description, date, coverImage, category`,
-  );
+  console.log(frontmatter);
+  invariant(slug, `Issue ${id} (frontmatter): slug`);
+  invariant(title, `Issue ${id} (frontmatter): title`);
+  invariant(description, `Issue ${id} (frontmatter): description`);
+  invariant(date, `Issue ${id} (frontmatter): date`);
+  invariant(coverImage, `Issue ${id} (frontmatter): coverImage`);
+  invariant(category, `Issue ${id} (frontmatter): category`);
   return { slug, title, description, date: String(date), coverImage, category };
 }
 
