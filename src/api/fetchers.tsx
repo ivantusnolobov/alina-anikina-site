@@ -29,7 +29,6 @@ function validateFrontmatter(id: number, frontmatter: { [key: string]: any }) {
   }
 
   const { slug, title, date, coverImage, category, description } = frontmatter as Frontmatter
-  console.log(frontmatter)
   invariant(slug, `Issue ${id} (frontmatter): slug`)
   invariant(title, `Issue ${id} (frontmatter): title`)
   invariant(description, `Issue ${id} (frontmatter): description`)
@@ -54,7 +53,7 @@ export async function getAllProjects() {
       if (error instanceof Error) {
         console.error(error.message)
       } else {
-        console.log("Unexpected error", error)
+        console.error("Unexpected error", error)
       }
     }
   }
