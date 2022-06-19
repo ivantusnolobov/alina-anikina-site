@@ -1,6 +1,6 @@
 const colorMap = new Map([
   ['Art', 'bg-pink-100 text-pink-800'],
-  ['Graphical Design', 'bg-green-100 text-green-800'],
+  ['Graphic Design', 'bg-green-100 text-green-800'],
   ['Digital Design', 'bg-blue-100 text-blue-800'],
 ]);
 

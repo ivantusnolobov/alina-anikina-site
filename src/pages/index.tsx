@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Link from '@app/components/link';
 import Layout from '@app/components/layout';
 import Image from 'next/image';
 import heroImage from '@public/img/hero-image.png';
@@ -7,8 +7,8 @@ export default function HomePage() {
   return (
     <Layout title="Alina Anikina">
       <main className="container my-auto">
-        <div className="flex flex-col items-center gap-10 md:flex-row">
-          <figure className="max-w-md -ml-6 md:order-last md:flex-1 md:max-w-none lg:-ml-0 lg:-mt-12">
+        <div className="grid gap-8 lg:grid-cols-2">
+          <figure className="-ml-6 lg:order-last lg:ml-0">
             <Image
               src={heroImage}
               width={596}
@@ -17,10 +17,10 @@ export default function HomePage() {
               className="block"
             />
           </figure>
-          <div className=" md:flex-1">
-            <div className="max-w-xl">
+          <div className="flex items-center max-w-md">
+            <div>
               <div className="mb-10">
-                <h1 className="mb-4">Hi!</h1>
+                <h1 className="mb-4 text-4xl font-semibold tracking-tight sm:text-5xl">Hi!</h1>
                 <p className="mb-4">
                   I’m Alina, a freelance graphic designer living in Bishkek. I create corporate
                   identity, posters, design for social networks, landing pages, merchandising,
@@ -29,12 +29,12 @@ export default function HomePage() {
                 <p>I’ll be happy to help you with your amazing project.</p>
                 <p>
                   Hit me up at{' '}
-                  <Link href="mailto:hey@alinaanikina.com">
-                    <a>hey@alinaanikina.com</a>
+                  <Link href="mailto:hey@alinaanikina.com" className="text-purple-500">
+                    hey@alinaanikina.com
                   </Link>
                 </p>
               </div>
-              <h2 className="mb-4">Software</h2>
+              <h2 className="mb-4 text-2xl font-semibold lg:text-3xl">Software</h2>
               <p className="mb-6">
                 To create I use programs such as: Figma, Illustrator, Photoshop, Procreate.
               </p>

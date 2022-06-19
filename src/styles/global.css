@@ -34,8 +34,4 @@
   body {
     @apply text-gray-800 antialiased font-sans;
   }
-
-  h1 {
-    @apply text-3xl tracking-tight font-semibold text-gray-800 sm:text-4xl;
-  }
 }
