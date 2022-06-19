@@ -1,6 +1,7 @@
-import * as React from 'react';
-import Header from '@app/components/header';
-import Head from 'next/head';
+import Head from "next/head"
+import * as React from "react"
+
+import Header from "@app/components/header"
 
 export default function Layout({ children, title }: Props) {
   return (
@@ -13,10 +14,10 @@ export default function Layout({ children, title }: Props) {
         {children}
       </div>
     </>
-  );
+  )
 }
 
 type Props = {
-  children?: React.ReactNode;
-  title: string;
-};
+  children?: React.ReactNode
+  title: string
+}

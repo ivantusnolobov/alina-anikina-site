@@ -1,5 +1,5 @@
-import * as React from 'react';
-import { SVGProps } from 'react';
+import * as React from "react"
+import { SVGProps } from "react"
 
 export default function Sparkle(props: SVGProps<SVGSVGElement>) {
   return (
@@ -9,5 +9,5 @@ export default function Sparkle(props: SVGProps<SVGSVGElement>) {
         fill="#ffe88a"
       />
     </svg>
-  );
+  )
 }

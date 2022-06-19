@@ -1,5 +1,7 @@
-import * as React from 'react';
-import Sparkle from './sparkle';
+import * as React from "react"
+
+import Sparkle from "./sparkle"
+
 export default function SparkleWrapper({ children }: Props) {
   return (
     <div className="relative w-fit">
@@ -13,9 +15,9 @@ export default function SparkleWrapper({ children }: Props) {
       <Sparkle className="absolute top-[25%] scale-50 right-[15%] " />
       {children}
     </div>
-  );
+  )
 }
 
 type Props = {
-  children: React.ReactNode;
-};
+  children: React.ReactNode
+}

@@ -1,7 +1,9 @@
-import Link from '@app/components/link';
-import Layout from '@app/components/layout';
-import Image from 'next/image';
-import heroImage from '@public/img/hero-image.png';
+import Image from "next/image"
+
+import heroImage from "@public/img/hero-image.png"
+
+import Layout from "@app/components/layout"
+import Link from "@app/components/link"
 
 export default function HomePage() {
   return (
@@ -28,7 +30,7 @@ export default function HomePage() {
                 </p>
                 <p>I’ll be happy to help you with your amazing project.</p>
                 <p>
-                  Hit me up at{' '}
+                  Hit me up at{" "}
                   <Link href="mailto:hey@alinaanikina.com" className="text-purple-500">
                     hey@alinaanikina.com
                   </Link>
@@ -76,5 +78,5 @@ export default function HomePage() {
         </div>
       </main>
     </Layout>
-  );
+  )
 }

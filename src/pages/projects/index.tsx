@@ -1,10 +1,11 @@
-import Link from 'next/link';
-import Tag from '@app/components/tag';
-import { getAllProjects } from '@app/api/fetchers';
-import type { InferGetStaticPropsType } from 'next';
-import { REVALIDATE_DELAY } from '@app/variables';
-import Layout from '@app/components/layout';
-import Image from 'next/image';
+import type { InferGetStaticPropsType } from "next"
+import Image from "next/image"
+import Link from "next/link"
+
+import { getAllProjects } from "@app/api/fetchers"
+import Layout from "@app/components/layout"
+import Tag from "@app/components/tag"
+import { REVALIDATE_DELAY } from "@app/variables"
 
 export default function ProjectsPage({ projects }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
@@ -31,10 +32,10 @@ export default function ProjectsPage({ projects }: InferGetStaticPropsType<typeo
         </ul>
       </main>
     </Layout>
-  );
+  )
 }
 
 export async function getStaticProps() {
-  const projects = await getAllProjects();
-  return { props: { projects }, revalidate: REVALIDATE_DELAY };
+  const projects = await getAllProjects()
+  return { props: { projects }, revalidate: REVALIDATE_DELAY }
 }
