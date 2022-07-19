@@ -32,6 +32,6 @@
   }
 
   body {
-    @apply text-gray-800 antialiased font-sans;
+    @apply font-sans text-gray-800 antialiased;
   }
 }

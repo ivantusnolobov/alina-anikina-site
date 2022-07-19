@@ -1,9 +1,8 @@
+import markdownToHtml from "@app/utils/markdown-to-html"
+import { GITHUB_REPO_ACCESS_TOKEN } from "@app/variables"
 import matter from "gray-matter"
 import { Octokit } from "octokit"
-import snarkdown from "snarkdown"
 import invariant from "tiny-invariant"
-
-import { GITHUB_REPO_ACCESS_TOKEN } from "@app/variables"
 
 const http = new Octokit({
   auth: GITHUB_REPO_ACCESS_TOKEN,
@@ -47,7 +46,8 @@ export async function getAllProjects() {
       invariant(item.body, `Issue ${item.id} should have a body`)
       const frontmatterRaw = matter(item.body)
       const meta = validateFrontmatter(item.id, frontmatterRaw.data)
-      const body = snarkdown(frontmatterRaw.content)
+      const body = await markdownToHtml(frontmatterRaw.content)
+
       projects.push({ id: item.id, meta, body })
     } catch (error) {
       if (error instanceof Error) {

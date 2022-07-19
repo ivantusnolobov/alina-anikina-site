@@ -1,9 +1,8 @@
+import Layout from "@app/components/layout"
+import Link from "@app/components/link"
 import Image from "next/image"
 
 import heroImage from "@public/img/hero-image.png"
-
-import Layout from "@app/components/layout"
-import Link from "@app/components/link"
 
 export default function HomePage() {
   return (
@@ -19,7 +18,7 @@ export default function HomePage() {
               className="block"
             />
           </figure>
-          <div className="flex items-center max-w-md">
+          <div className="flex max-w-md items-center">
             <div>
               <div className="mb-10">
                 <h1 className="mb-4 text-4xl font-semibold tracking-tight sm:text-5xl">Hi!</h1>
@@ -41,7 +40,7 @@ export default function HomePage() {
                 To create I use programs such as: Figma, Illustrator, Photoshop, Procreate.
               </p>
               <figure>
-                <div className="flex gap-4 mb-4">
+                <div className="mb-4 flex gap-4">
                   <Image
                     src="/icons/figma.svg"
                     alt="figma logo"

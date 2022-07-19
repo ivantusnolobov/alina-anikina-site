@@ -1,36 +1,36 @@
-import htmr from "htmr"
-import type { HtmrOptions } from "htmr"
-import Image from "next/image"
-
 import Link from "@app/components/link"
+import parse, { domToReact } from "html-react-parser"
+import { HTMLReactParserOptions, Element } from "html-react-parser"
+import Image from "next/image"
 
 export default function renderHTML(
   html: string,
   config: { imageSize: { width: number; height: number } }
 ) {
-  const options: HtmrOptions = {
-    transform: {
-      a: Link,
-      img: (props) => {
-        const src = props.src
-        const alt = props.alt ?? ""
+  const options: HTMLReactParserOptions = {
+    replace: (domNode) => {
+      if (domNode instanceof Element && !domNode.attribs) {
+        return
+      }
 
-        if (src) {
-          return (
-            <div className="leading-0">
-              <Image
-                src={src}
-                alt={alt}
-                width={config.imageSize.width}
-                height={config.imageSize.height}
-              />
-            </div>
-          )
-        }
-        return null
-      },
+      if (domNode instanceof Element && domNode.name === "img" && domNode.attribs.src) {
+        return (
+          <div className="leading-0">
+            <Image
+              src={domNode.attribs.src}
+              alt={domNode.attribs.alt}
+              width={config.imageSize.width}
+              height={config.imageSize.height}
+            />
+          </div>
+        )
+      }
+
+      if (domNode instanceof Element && domNode.name === "a") {
+        return <Link href={domNode.attribs.href}>{domToReact(domNode.children, options)}</Link>
+      }
     },
   }
 
-  return htmr(html, options)
+  return parse(html, options)
 }
